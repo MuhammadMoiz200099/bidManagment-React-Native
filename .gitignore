@@ -3,7 +3,7 @@
 node_modules
 android/.gradle
 package-lock.json
-
+android/local.properties
 
 # IDEs and editors
 /.idea
