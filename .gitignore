@@ -1,6 +1,9 @@
 
 #dependencies
 node_modules
+android/.gradle
+package-lock.json
+
 
 # IDEs and editors
 /.idea
