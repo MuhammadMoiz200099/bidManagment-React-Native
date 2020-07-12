@@ -5,6 +5,14 @@ android/.gradle
 package-lock.json
 android/local.properties
 
+# Gradle
+/build/
+./android/app/build/
+./android/app/gradle/
+./android/app/gradlew
+./android/app/gradlew.bat
+./build/
+
 # IDEs and editors
 /.idea
 .project
