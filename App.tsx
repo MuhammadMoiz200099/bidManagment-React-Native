@@ -1,26 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {Provider} from 'react-native-paper';
+import App from './src';
+import {theme} from './src/core/theme';
 
-const App = () => {
-  return (
-    <>
-      <Text>Hello, World</Text>
-    </>
-  );
-};
+const Main = () => (
+  <Provider theme={theme}>
+    <App />
+  </Provider>
+);
 
-const styles = StyleSheet.create({
-  Text: {
-    textAlign: 'center',
-  },
-});
-
-export default App;
+export default Main;
