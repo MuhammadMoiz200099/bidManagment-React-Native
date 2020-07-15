@@ -7,7 +7,7 @@ type Props = {
 
 const Background = ({children}: Props) => (
   <ImageBackground
-    source={require('../assets/background_dot.png')}
+    source={require('./../../asserts/accessories/background_dot.png')}
     resizeMode="repeat"
     style={styles.background}>
     <KeyboardAvoidingView style={styles.container} behavior="padding">
