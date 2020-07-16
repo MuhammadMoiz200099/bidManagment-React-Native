@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useState, useEffect} from 'react';
 import {TouchableOpacity, StyleSheet, Text, View} from 'react-native';
 import Background from '../components/Background';
 import Logo from '../components/Logo';
@@ -9,6 +9,7 @@ import BackButton from '../components/BackButton';
 import {theme} from '../core/theme';
 import {emailValidator, passwordValidator} from '../core/utils';
 import {Navigation} from '../types';
+import socketService from '../services/socketConnections.service';
 
 type Props = {
   navigation: Navigation;
@@ -16,20 +17,35 @@ type Props = {
 
 const LoginScreen = ({navigation}: Props) => {
   const [email, setEmail] = useState({value: '', error: ''});
-  const [password, setPassword] = useState({value: '', error: ''});
+  const [pass, setPassword] = useState({value: '', error: ''});
+  // const [loginDetails, setLoginDetails] = useState([]);
 
   const _onLoginPressed = () => {
     const emailError = emailValidator(email.value);
-    const passwordError = passwordValidator(password.value);
+    const passwordError = passwordValidator(pass.value);
 
     if (emailError || passwordError) {
       setEmail({...email, error: emailError});
-      setPassword({...password, error: passwordError});
+      setPassword({...pass, error: passwordError});
       return;
     }
+    // loginDetails.map(({username, password}) => {
+    //   console.log(username, password);
+    //   if (email === username && pass === password) {
+    //     navigation.navigate('Dashboard');
+    //   }
+    // });
 
-    navigation.navigate('Dashboard');
+    if (email.value === 'muhammadmoiz@gmail.com' && pass.value === 'testpass') {
+      navigation.navigate('Dashboard');
+    }
   };
+
+  // useEffect(() => {
+  //   socketService.setupSocketConnection();
+  //   socketService.requestLoginDetails();
+  //   setLoginDetails(socketService.responseLoginDetails());
+  // });
 
   return (
     <Background>
@@ -55,10 +71,10 @@ const LoginScreen = ({navigation}: Props) => {
       <TextInput
         label="Password"
         returnKeyType="done"
-        value={password.value}
+        value={pass.value}
         onChangeText={(text) => setPassword({value: text, error: ''})}
-        error={!!password.error}
-        errorText={password.error}
+        error={!!pass.error}
+        errorText={pass.error}
         secureTextEntry
       />
 

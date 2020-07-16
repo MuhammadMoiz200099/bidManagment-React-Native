@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server app",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index.js"
+  },
+  "author": "Muhammad Moiz Siddique",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}

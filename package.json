@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start:server": "cd ./server && node index.js"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
@@ -22,7 +23,8 @@
     "react-native-vector-icons": "^7.0.0",
     "react-native-web": "^0.13.3",
     "react-navigation": "^4.4.0",
-    "react-navigation-stack": "^2.8.2"
+    "react-navigation-stack": "^2.8.2",
+    "socket.io-client": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
